@@ -1,0 +1,9 @@
+FCFS:
+    Each process will be completed.
+    The waiting time depends on the arrival time, the later the process arrives, the longer it will wait.
+SJF:
+    Since the shortest process is running, the longest process may not be executed at all.
+    But short processes have a chance to be executed immediately, thus increasing the total number of executed processes.
+Round Robin:
+    All processes have the same priority, which allows short processes to execute faster, but for long ones it is not so simple.
+    If the quantum is too large, then the algorithm will not differ from FCFS, if the quantum is too small, then the processor efficiency decreases.
