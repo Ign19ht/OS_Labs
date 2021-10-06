@@ -1,0 +1,2 @@
+Physical address refers to a location in memory unit
+Virtual address refers to a process address space
