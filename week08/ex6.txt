@@ -1,0 +1,5 @@
+8KB = 13 bit
+A machine has 16 bit
+So 16 - 13 = 3 bit It represents number of page
+Therefore we have total pages = 2^3 = 8
+Answer: 8
