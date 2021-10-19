@@ -1,0 +1,10 @@
+To increase the number of hits, it is necessary that the same sequence references appear NO later than N, where N is the cache size.
+For example:
+If N = 5:
+    1 2 3 1 4 2 3 5; where 1, 2, 3 appeared when they are still in the cache.
+If N = 7:
+    1 2 3 4 5 6 7 1 2 3 4 5 6 7
+And vice versa, To increase the number of hits, it is necessary that the same sequence references appear LATER than N, where N is the cache size.
+For example:
+If N = 5:
+    1 2 3 4 5 6 1 2 3 4 5 6, each element appear only after that moment when it was moved from the cache

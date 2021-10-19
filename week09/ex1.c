@@ -34,7 +34,7 @@ Page* find_oldest(Page *pages, int n) {
 }
 
 int main(void) {
-    FILE *file = fopen("week09\\input.txt", "r");
+    FILE *file = fopen("input.txt", "r");
     printf("Print the number of pages:");
     int n;
     scanf("%d", &n);
@@ -49,10 +49,11 @@ int main(void) {
     }
     int number_of_hits = 0;
     int number_of_misses = 0;
-    while (!feof(file)) {
-        print_pages(pages, n);
+    while (1) {
         int current_reference;
         fscanf(file, "%d", &current_reference);
+        if (feof(file)) break;
+        print_pages(pages, n);
         printf("current page number %d\n\n", current_reference);
         aging(pages, n);
         Page *current_page = check_hit(pages, n, current_reference);
