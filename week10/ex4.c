@@ -16,23 +16,24 @@ int main(void) {
     scanf("%s", folder_path);
     DIR *folder = opendir(folder_path);
     struct dirent *file;
-    struct stat *file_stat;
+    struct stat file_stat;
     char* path = malloc(sizeof(char));
+
+    printf("FILE - HARD LINK\n");
+
     while ((file = readdir(folder)) != NULL) {
         get_path(folder_path, file->d_name, path);
-        stat(path, file_stat);
-
-        printf("FILE - HARD LINK");
+        stat(path, &file_stat);
 
         char* names[100];
         int count = 0;
         DIR *folder_temp = opendir(folder_path);
         struct dirent *file_temp;
-        struct stat *file_stat_temp;
+        struct stat file_stat_temp;
         while ((file_temp = readdir(folder_temp)) != NULL) {
             get_path(folder_path, file_temp->d_name, path);
-            stat(path, file_stat_temp);
-            if (file_stat->st_ino == file_stat_temp->st_ino) {
+            stat(path, &file_stat_temp);
+            if (file_stat.st_ino == file_stat_temp.st_ino) {
                 names[count] = file_temp->d_name;
                 count++;
             }
