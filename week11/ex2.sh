@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 echo 'Ignat' >> lofsdisk/file1.txt
 echo 'Petrov' >> lofsdisk/file2.txt
+gcc ex2.c -o ex2
 ./ex2 > ex2.txt
 
 mkdir -p lofsdisk/bin
