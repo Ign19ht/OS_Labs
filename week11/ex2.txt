@@ -24,3 +24,14 @@ libx32
 lib
 sys
 etc
+CHROOT:
+.
+ex2.txt
+lib
+file2.txt
+lib64
+usr
+ex2
+bin
+file1.txt
+..
