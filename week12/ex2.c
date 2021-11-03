@@ -26,7 +26,6 @@ int main(void) {
     while (1) {
         n = read(fd, &ev, sizeof ev);
         if (ev.type == 1) printf("%s 0x%04x (%d)\n", evval[ev.value], ev.code, ev.code);
-
     }
     fflush(stdout);
     fprintf(stderr, "%s.\n", strerror(errno));

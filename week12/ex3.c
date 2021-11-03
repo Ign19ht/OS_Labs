@@ -22,15 +22,17 @@ typedef struct shortcut {
     key *head;
     key *current;
     char *message;
+    char *info;
 } shortcut;
 
-shortcut *create_shortcut(int n, int array[], char *message) {
+shortcut *create_shortcut(int n, int array[], char *message, char *info) {
     shortcut *sc = malloc(sizeof(shortcut));
     key *head = malloc(sizeof(key));
     head->value = array[0];
     sc->head = head;
     sc->current = head;
     sc->message = message;
+    sc->info = info;
     key *current_key = head;
     for (int i = 1; i < n; i++) {
         key *key = malloc(sizeof key);
@@ -60,8 +62,12 @@ int main(void) {
     shortcut *shortcuts[2];
     int passed[] = {25, 18};
     int cap[] = {46, 30, 25};
-    shortcuts[0] = create_shortcut(2, passed, "I passed the Exam!");
-    shortcuts[1] = create_shortcut(3, cap, "Get some cappuccino!");
+    shortcuts[0] = create_shortcut(2, passed, "I passed the Exam!", "P + E");
+    shortcuts[1] = create_shortcut(3, cap, "Get some cappuccino!", "C + A + P");
+
+    for (int i = 0; i < 2; i++) {
+        printf("%s -> %s\n", shortcuts[i]->info, shortcuts[i]->message);
+    }
     const char *dev = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
     struct input_event ev;
     ssize_t n;

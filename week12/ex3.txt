@@ -1,0 +1,7 @@
+P + E -> I passed the Exam!
+C + A + P -> Get some cappuccino!
+pI passed the Exam!
+ecaGet some cappuccino!
+pcaGet some cappuccino!
+cpapI passed the Exam!
+e
